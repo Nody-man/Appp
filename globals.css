@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Work Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', 'Georgia', serif;
+  --font-mono: 'IBM Plex Mono', 'Menlo', monospace;
+
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F5EBDA;
+  --color-forest: #1B4332;
+  --color-forest-light: #2D6A4F;
+  --color-forest-lighter: #40916C;
+  --color-rust: #C44900;
+  --color-rust-dark: #A33D00;
+  --color-rust-light: #E65100;
+  --color-gold: #D4A843;
+  --color-gold-light: #F0D68A;
+  --color-gold-dim: #B8922F;
+  --color-bark: #3E2723;
+  --color-bark-light: #5D4037;
+  --color-sand: #E8DCC8;
+  --color-sand-dark: #D5C5A8;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+@keyframes slideOutRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toastOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-8px) scale(0.95); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out both;
+}
+.animate-slide-in-right {
+  animation: slideInRight 0.35s cubic-bezier(0.22,1,0.36,1) both;
+}
+.animate-slide-out-right {
+  animation: slideOutRight 0.3s cubic-bezier(0.22,1,0.36,1) both;
+}
+.animate-toast-in {
+  animation: toastIn 0.35s ease-out both;
+}
+.animate-toast-out {
+  animation: toastOut 0.25s ease-in both;
+}
+.stagger-1 { animation-delay: 0.07s; }
+.stagger-2 { animation-delay: 0.14s; }
+.stagger-3 { animation-delay: 0.21s; }
+.stagger-4 { animation-delay: 0.28s; }
+.stagger-5 { animation-delay: 0.35s; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-sand-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-gold-dim); }
